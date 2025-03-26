@@ -22,6 +22,35 @@ body {
     background-repeat: no-repeat;
 }
 
+.app-icon-holder {
+    grid-row-start: 4;
+    grid-row-end: 10;
+    grid-column-start: 4;
+    grid-column-end: 10;
+    background-color: transparent;
+    display: flex;
+    align-items: center; 
+}
+.app-icon-holder img{
+    width: 120px;
+}
+.app-icon-holder-label {
+    background-color: transparent;
+    grid-row-start: 10;
+    grid-row-end: 11;
+    grid-column-start: 5;
+    grid-column-end: 12;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    font-family: game-title-font;
+    font-weight: 600;
+    color: #ffffff;
+    font-stretch: expanded;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* copied from Stackoverflow*/
+}
+
+
 .main-window {
     grid-row-start: 2;
     grid-row-end: 33;
