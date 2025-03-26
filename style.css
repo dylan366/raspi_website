@@ -24,9 +24,9 @@ body {
 
 .main-window {
     grid-row-start: 2;
-    grid-row-end: 43;
+    grid-row-end: 33;
     grid-column-start: 25;
-    grid-column-end: 85;
+    grid-column-end: 65;
     display: grid;
     grid-template-columns: repeat(40, 1fr);
     grid-template-rows: repeat(50, 1fr);
@@ -42,7 +42,7 @@ body {
 .game-title {
     margin: 3px;
     grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 80;
     display: flex;
@@ -76,21 +76,42 @@ body {
     width: 40px;
     height: auto;
     image-rendering: pixelated;
-    padding: 2px;
+    padding: 1px;
     object-fit: contain;
     display: flex;
     align-items: center;
+}
+
+/* GAME MENU BAR (TOP THINGY)*/
+.game-menu-bar {
+    margin: 2px;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #aaaaa8;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    outline: 2px solid #c0c0c0;
+    border-bottom: 3px solid #000000;
 }
 
 
 /* GAME WINDOW AND OTHER WINDOW */
 
 .game-window {
-    grid-row-start: 8;
-    grid-row-end: 48;
-    grid-column-start: 3;
-    grid-column-end: 28;
-    background-color: #ffffff
+    grid-row-start: 6;
+    grid-row-end: 50;
+    grid-column-start: 2;
+    grid-column-end: 40;
+    background-color: #ffffff;
+    border-top: 4px solid #000000;
+    border-left: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+    border-right: 4px solid #000000;
 }
 
 .outside-game {
