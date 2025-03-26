@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: game-title-font;
+    src: url(fonts/MS-Sans-Serif.ttf);
+    size-adjust: 100%;
+    font-stretch: ultra-expanded;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    height: 100vh;
+    background-image: url("images/frutiger-aero-6.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-window {
+    grid-row-start: 2;
+    grid-row-end: 43;
+    grid-column-start: 25;
+    grid-column-end: 85;
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    outline: 2px solid #c0c0c0;
+    border-bottom: 3px solid #000000;
+    border-right: 3px solid #000000;
+}
+
+/* MAIN WINDOW TITLE STRIP */ 
+.game-title {
+    margin: 3px;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(189, 189, 189);
+    opacity: 2;
+    color: white;
+    font-family: game-title-font;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #010080, #1082cd);
+    height: 100%;
+}
+.game-title .title-text {
+    flex-grow: 1;
+    text-align: left;
+    flex-grow: 1;
+    align-items: center;
+}
+.topleft-symbol img, 
+.close-window-symbol img{
+    width: 20px;
+    height: auto;
+    image-rendering: pixelated;
+    padding: 5px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+}
+.other-buttons-title-symbols img {
+    width: 40px;
+    height: auto;
+    image-rendering: pixelated;
+    padding: 2px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+}
+
+
+/* GAME WINDOW AND OTHER WINDOW */
+
+.game-window {
+    grid-row-start: 8;
+    grid-row-end: 48;
+    grid-column-start: 3;
+    grid-column-end: 28;
+    background-color: #ffffff
+}
+
+.outside-game {
+    background-color: blue;
+    grid-row-start: 8;
+    grid-row-end: 48;
+    grid-column-start: 29;
+    grid-column-end: 40;
+}
+
+
+/* AD WINDOWS AND OUTSIDE THE MAIN WINDOW */
+.ad-window {
+    grid-row-start: 2;
+    grid-row-end: 50;
+    background-color: rgb(127, 123, 123);
+}
+
+.ad-window-left {
+    grid-column-start: 2;
+    grid-column-end: 20;
+}
+
+.ad-window-right {
+    grid-column-start: 86;
+    grid-column-end: 100;
+}
+
+.ad-window-bottom {
+    grid-column-start: 25;
+    grid-column-end: 76;
+    grid-row-start: 44;
+    grid-row-end: 50;
+    background-color: rgb(120, 120, 120);
+}
+

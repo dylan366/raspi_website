@@ -1,0 +1,29 @@
+early 2000s website
+
+background: basic picture fruitger aero for example, stays constant
+foreground:white kind of square, maybe slightly transparent, so that the edges of the site are still the background,
+
+
+.topnav {
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+<!--<div class="topnav">
+            <a class="active">Hello</a>
+            <a>hi</a>
+        </div>
+        -->
