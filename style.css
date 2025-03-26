@@ -42,7 +42,7 @@ body {
 .game-title {
     margin: 3px;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 80;
     display: flex;
@@ -68,9 +68,13 @@ body {
     height: auto;
     image-rendering: pixelated;
     padding: 5px;
+    margin: 1px;
     object-fit: contain;
     display: flex;
     align-items: center;
+}
+.close-window-symbol {
+    cursor: pointer;
 }
 .other-buttons-title-symbols img {
     width: 40px;
@@ -85,8 +89,8 @@ body {
 /* GAME MENU BAR (TOP THINGY)*/
 .game-menu-bar {
     margin: 2px;
-    grid-row-start: 3;
-    grid-row-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 7;
     grid-column-start: 1;
     grid-column-end: 80;
     display: flex;
@@ -103,7 +107,7 @@ body {
 /* GAME WINDOW AND OTHER WINDOW */
 
 .game-window {
-    grid-row-start: 6;
+    grid-row-start: 7;
     grid-row-end: 50;
     grid-column-start: 2;
     grid-column-end: 40;
