@@ -1,9 +1,21 @@
 const closeGameButton = document.getElementById("close-game-window");
-const appWindow = document.getElementById("game-application-window");
+const gameAppIcon = document.getElementById("open-game-app");
+let appOpen = true;
 
-
-function closeWindow() {
-    console.log("Hello World!");
+async function openGameApp() {
+    if (appOpen === false) {
+        console.log("Opened!");
+        appOpen = true;
+    }
 }
-
-closeGameButton.addEventListener('click', closeWindow);
+async function closeGameApp() {
+    if (appOpen) {
+        console.log("Closed!");
+        appOpen = false;
+    }
+}
+if (appOpen) {
+    closeGameButton.addEventListener("click", closeGameApp);
+} else {
+    gameAppIcon.addEventListener("click", openGameApp);
+}

@@ -21,31 +21,50 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.app-game {
+    background-color: red;
+    grid-row-start: 3;
+    grid-row-end: 10;
+    grid-column-start: 4;
+    grid-column-end: 15;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+.icon-holder {
+    display: flex;
+    background-color: blue;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 11;
+}
+.image-of-app-icon{
+    
+    cursor: pointer;
+}
+/* 
 .app-icon-holder {
-    grid-row-start: 4;
+    grid-row-start: 2;
     grid-row-end: 10;
     grid-column-start: 4;
     grid-column-end: 10;
-    background-color: transparent;
+    background-color: red;
     display: flex;
     align-items: center; 
-}
-.app-icon-holder img{
-    width: 120px;
-}
+} */
+
 .app-icon-holder-label {
     background-color: transparent;
-    grid-row-start: 10;
-    grid-row-end: 11;
-    grid-column-start: 5;
-    grid-column-end: 12;
-    display: flex;
+    grid-row-start: 9;
+    grid-row-end: 10;
+    grid-column-start: 4;
+    grid-column-end: 10;
     align-items: center;
-    text-align: right;
+    text-align: center;  
     font-family: game-title-font;
     font-weight: 600;
-    color: #ffffff;
+    color: #626262;
     font-stretch: expanded;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* copied from Stackoverflow*/
 }
