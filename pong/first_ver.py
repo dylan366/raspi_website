@@ -10,10 +10,6 @@ RED = (255, 0, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-# CONTROLS
-UP_BUTTON = pygame.K_UP
-DOWN_BUTTON = pygame.K_DOWN
-
 #ball
 radius = 8
 ball_x = WIDTH//2 - radius
@@ -35,6 +31,10 @@ right_paddle_x = WIDTH - paddles_width
 right_paddle_vel = 0
 left_paddle_vel = 0
 
+# CONTROLS
+UP_BUTTON = pygame.K_UP
+DOWN_BUTTON = pygame.K_DOWN
+
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("PONG")
 
@@ -46,11 +46,11 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == DOWN_BUTTON:
             #plyer right
-            if event.key == pygame.K_UP:
+            if event.key == UP_BUTTON:
                 right_paddle_vel = -1 * PADDLE_SPEED
-            if event.key == pygame.K_DOWN:
+            if event.key == DOWN_BUTTON:
                 right_paddle_vel = PADDLE_SPEED
             #player left
             if event.key == pygame.K_w:

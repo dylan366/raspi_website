@@ -146,7 +146,7 @@ body {
 }
 
 
-/* GAME WINDOW AND OTHER WINDOW */
+/* GAME WINDOW */
 
 .game-window {
     grid-row-start: 7;
@@ -160,37 +160,90 @@ body {
     border-right: 4px solid #000000;
 }
 
-.outside-game {
-    background-color: blue;
-    grid-row-start: 8;
-    grid-row-end: 48;
-    grid-column-start: 29;
-    grid-column-end: 40;
+/* Join queue */
+.play-queue-button {
+    background-color: rgba(189,189,189,0.8);
+    border-radius: 5px;
+    grid-row-start: 22;
+    grid-row-end: 28;
+    margin: 2px;
+    grid-column-start: 4;
+    grid-column-end: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+    cursor: pointer;
+}
+.queue-button-text {
+    flex-grow: 1;
+    text-align: left;
+    flex-grow: 1;
+    align-items: center;
+    font-size: 20px;
+    font-family: game-title-font;
+    color: rgb(215, 215, 215);
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+    
+.leave-queue-button {
+    background-color: #bdbdbdcc;
+    border-radius: 5px;
+    grid-row-start: 28;
+    grid-row-end: 34;
+    margin: 2px;
+    grid-column-start: 4;
+    grid-column-end: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+    cursor: pointer;
 }
 
-
-/* AD WINDOWS AND OUTSIDE THE MAIN WINDOW */
-.ad-window {
-    grid-row-start: 2;
-    grid-row-end: 50;
-    background-color: rgb(127, 123, 123);
+.own-username-label {
+    background-color: rgba(189,189,189,0.8);
+    border-radius: 5px;
+    grid-row-start: 40;
+    grid-row-end: 42;
+    margin: 2px;
+    grid-column-start: 4;
+    grid-column-end: 35;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 2vh;
+}
+.own-username {
+    background-color: transparent;
+    border-radius: 5px;
+    grid-row-start: 40;
+    grid-row-end: 42;
+    margin: 2px;
+    grid-column-start: 20;
+    grid-column-end: 35;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 2vh;
 }
 
-.ad-window-left {
-    grid-column-start: 2;
-    grid-column-end: 20;
+.opp-username-label {
+    background-color: rgba(189,189,189,0.8);
+    border-radius: 5px;
+    grid-row-start: 42;
+    grid-row-end: 44;
+    margin: 2px;
+    grid-column-start: 4;
+    grid-column-end: 35;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 2vh;
 }
-
-.ad-window-right {
-    grid-column-start: 86;
-    grid-column-end: 100;
-}
-
-.ad-window-bottom {
-    grid-column-start: 25;
-    grid-column-end: 76;
-    grid-row-start: 44;
-    grid-row-end: 50;
-    background-color: rgb(120, 120, 120);
-}
-
