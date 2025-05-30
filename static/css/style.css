@@ -253,7 +253,7 @@ body {
 }
 
 canvas {
-    background: black;
+    background: #010080;
     display: block;
     margin: 0 auto;
     width: 100%;
