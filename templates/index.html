@@ -5,33 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My website</title>
-    <link rel="stylesheet" href="style.css">
-    </link>
+    <link rel="stylesheet" href="static\css\style.css"></link>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="static\js\script.js" defer></script>
 </head>
 
 <body>
     <div class="app-game" id="game-desktop-icon">
         <div class="icon-holder">
-            <img class="icon-holder-app" src="images/arcadeart-icon.png" id="open-game-app">
+            <img class="icon-holder-app" src="static\images\arcadeart-icon.png" id="open-game-app">
         </div>
         <div class="app-label">Games Launcher</div> 
     </div>
 
     <div class="main-window" id="game-application-window">
         <div class="game-title">
-            <div class="topleft-symbol"> <img src="images/gambling.png"> </div>
+            <div class="topleft-symbol"> <img src="static\images\gambling.png"> </div>
             <div class="title-text">CRAZY PONG</div>
-            <div class="other-buttons-title-symbols" id="app-collapse-buttons"><img src="images/two-other-buttons-title.png">
+            <div class="other-buttons-title-symbols" id="app-collapse-buttons"><img src="static\images\two-other-buttons-title.png">
             </div>
-            <div class="close-window-symbol" id="close-game-window"><img src="images/close-tab-x.png"></div>
+            <div class="close-window-symbol" id="close-game-window"><img src="static\images\close-tab-x.png"></div>
         </div>
         <div class="game-menu-bar">
 
         </div>
 
-        <div class="game-window"></div>
+        <div class="game-window">
+            <canvas id="canvas-game" width="600" height="400"></canvas>
+        </div>
     </div>
-
     <!-- GAME QUEUE BUTTONS-->
     <div class="play-queue-button" id="joinGameQueue">
         <div class="queue-button-text">JOIN QUEUE</div>
@@ -43,12 +45,8 @@
     <!-- first own then opponent IP ADDRESSES -->
     <div class="own-username-label">Your username: </div>
     <input type="text" class="own-username" id="username-input"></input>
+    
 
-    <div class="opp-username-label" id="other-ip-address">Opp's username: </div>
-
-
-
-    <script src="script.js"></script>
 </body>
 
 </html>
