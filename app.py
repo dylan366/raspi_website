@@ -6,21 +6,22 @@ import time
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode="threading")
 
+PADDLE_SPEED = 10
+
 game_state = {
     "players": {
         "player1": {"y": 200},
         "player2": {"y": 200}
     },
     "ball": {"x": 300, "y": 200, "vx": 4, "vy": 4},
-    "active": False  # Initially inactive until 2 players join
+    "active": False 
 }
 
 sid_to_player = {}
 room_name = "game_room"
 
 def check_and_update_game_active():
-    # Enable game only if exactly 2 players connected
-    if len(sid_to_player) == 2:
+    if len(sid_to_player) == 2: # max 2 players
         game_state["active"] = True
     else:
         game_state["active"] = False
@@ -47,7 +48,7 @@ def handle_join(data):
     emit("joined", {
         "player": sid_to_player[sid],
         "opponent": game_state["players"].get("player2" if sid_to_player[sid] == "player1" else "player1", {}).get("username", "")
-    }, room=sid)
+    }, room=sid) # pass this around a bit
 
     print(f"{sid_to_player[sid]} joined, players count: {len(sid_to_player)}")
 
@@ -77,9 +78,9 @@ def handle_paddle_move(data):
     if not player_id or not game_state["active"]:
         return
     if data["direction"] == "up":
-        game_state["players"][player_id]["y"] = max(0, game_state["players"][player_id]["y"] - 5)
+        game_state["players"][player_id]["y"] = max(0, game_state["players"][player_id]["y"] - PADDLE_SPEED)
     elif data["direction"] == "down":
-        game_state["players"][player_id]["y"] = min(300, game_state["players"][player_id]["y"] + 5)
+        game_state["players"][player_id]["y"] = min(300, game_state["players"][player_id]["y"] + PADDLE_SPEED)
 
 
 def game_loop():
@@ -92,20 +93,19 @@ def game_loop():
         ball["x"] += ball["vx"]
         ball["y"] += ball["vy"]
 
-        # Wall collision
+        # wall cols for paddle
         if ball["y"] <= 0 or ball["y"] >= 400:
             ball["vy"] *= -1
 
-        # Paddle collision
+        # paddle cols
         p1_y = game_state["players"]["player1"]["y"]
         p2_y = game_state["players"]["player2"]["y"]
-
         if ball["x"] <= 20 and p1_y < ball["y"] < p1_y + 100:
             ball["vx"] *= -1
         elif ball["x"] >= 580 and p2_y < ball["y"] < p2_y + 100:
             ball["vx"] *= -1
 
-        # Reset if ball goes off screen
+        # reset ball
         if ball["x"] <= 0 or ball["x"] >= 600:
             ball["x"], ball["y"] = 300, 200
 

@@ -28,7 +28,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* THE IMAGE APP WHATEVER THINGY */
+/* THE IMAGE APP */
 .app-game {
     grid-row-start: 3;
     grid-row-end: 12;
@@ -168,7 +168,6 @@ body {
     grid-template-rows: repeat(10, 1fr);
 }
 
-/* Join queue */
 .play-queue-button {
     background-color: rgba(189, 189, 189, 0.8);
     border-radius: 5px;

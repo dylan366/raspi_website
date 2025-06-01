@@ -15,7 +15,7 @@ let gameState = {
     ball: { x: 300, y: 200 }
 };
 
-// handle app opening/closing
+// app open close on website
 const closeGameButton = document.getElementById("close-game-window");
 const gameAppIcon = document.getElementById("open-game-app");
 const gameWindow = document.getElementById("game-application-window");
@@ -34,6 +34,7 @@ closeGameButton.addEventListener("click", () => {
     console.log("App closed");
 });
 
+// queue buttons and stuff
 const joinQueueButton = document.getElementById("joinGameQueue");
 const leaveQueueButton = document.getElementById("leaveGameQueue");
 const usernameInput = document.getElementById("username-input");
@@ -45,13 +46,13 @@ leaveQueueButton.style.visibility = "hidden";
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Ball
+    // draw ball
     ctx.fillStyle = "white";
     ctx.beginPath();
     ctx.arc(gameState.ball.x, gameState.ball.y, 10, 0, Math.PI * 2);
     ctx.fill();
 
-    // Paddles
+    // draw paddles
     ctx.fillRect(10, gameState.players.player1.y, paddleWidth, paddleHeight);
     ctx.fillRect(580, gameState.players.player2.y, paddleWidth, paddleHeight);
 }
@@ -92,6 +93,7 @@ function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+// bunch of sockets (send stuff to python and back)
 socket.on("joined", (data) => {
     player = data.player;
     inGame = true;
