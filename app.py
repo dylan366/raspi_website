@@ -21,7 +21,7 @@ sid_to_player = {}
 room_name = "game_room"
 
 def check_and_update_game_active():
-    if len(sid_to_player) == 2: # max 2 players
+    if len(sid_to_player) == 2: # max 2 
         game_state["active"] = True
     else:
         game_state["active"] = False
